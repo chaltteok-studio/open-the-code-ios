@@ -1,0 +1,3 @@
+[submodule "Package/Core/ChapssalKit-iOS"]
+	path = Package/Core/ChapssalKit-iOS
+	url = git@github.com:chaltteok-studio/ChapssalKit-iOS.git

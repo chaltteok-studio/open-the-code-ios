@@ -1,0 +1,66 @@
+{
+  "configurations" : [
+    {
+      "id" : "93BE4554-36BB-42C9-B3DB-6FCE3852B812",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/API",
+        "identifier" : "APITests",
+        "name" : "APITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/Service\/AppService",
+        "identifier" : "AppServiceTests",
+        "name" : "AppServiceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/Service\/CodeService",
+        "identifier" : "CodeServiceTests",
+        "name" : "CodeServiceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/UI\/Resource",
+        "identifier" : "ResourceTests",
+        "name" : "ResourceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/Store",
+        "identifier" : "StoreTests",
+        "name" : "StoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Module\/Service\/UserService",
+        "identifier" : "UserServiceTests",
+        "name" : "UserServiceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Package\/Core\/Util",
+        "identifier" : "UtilTests",
+        "name" : "UtilTests"
+      }
+    }
+  ],
+  "version" : 1
+}

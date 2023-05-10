@@ -1,0 +1,20 @@
+# MacOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/contents.xcworkspacedata
+
+# Fastlane
+fastlane
+Gemfile
+Gemfile.lock
+
+# User
+Output
+
+# Private Information
+Google Service

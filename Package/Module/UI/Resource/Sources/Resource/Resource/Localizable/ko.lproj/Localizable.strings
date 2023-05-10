@@ -1,0 +1,127 @@
+/* 
+  Localizable.strings
+  
+
+  Created by JSilver on 2023/01/28.
+  
+*/
+
+// MARK: - Common
+"app_name" = "The Code";
+"team_name" = "Chaltteok Studio";
+"copyright" = "© Chaltteok Studio";
+
+"empty_title" = "결과를 찾지 못했습니다.";
+"empty_description" = "인터넷 환경을 한번 더 확인한 뒤\n다시 시도해주세요.";
+
+"error_alert_title" = "안내";
+"error_alert_description" = "일시적인 오류가 발생했습니다.\n잠시후 다시 시도해주세요.";
+"error_alert_action_cancel_title" = "취소";
+"error_alert_action_confirm_title" = "확인";
+
+"loading_code_decryption_1" = "레인보우 테이블을 사용해 비밀번호 해독 속도를 높이는 중.";
+"loading_code_decryption_2" = "사용자의 반려동물 이름을 추측하여 암호화 키를 해독하는 중.";
+"loading_code_decryption_3" = "문자의 빈도 분포를 분석하여 단알파벳 치환 암호를 해독하는 중.";
+"loading_code_decryption_4" = "중요한 메시지를 해독하기 위해 삭제된 키 파일을 복구하려고 시도하는 중.";
+"loading_code_decryption_5" = "뒤섞인 메시지를 알려진 일반 텍스트와 비교하여 암호 해독하는 중.";
+"loading_code_decryption_6" = "암호화 알고리즘의 약점을 찾아 악용하려는 시도 중.";
+"loading_code_decryption_7" = "양자 컴퓨터를 사용하여 RSA 암호화를 해독하기 위한 쇼의 알고리즘을 수행하는 중.";
+"loading_code_decryption_8" = "일회용 패드로 암호화된 메시지를 해독하려고 했지만 키가 없으면 불가능하다는 것을 깨닫는 중.";
+"loading_code_decryption_9" = "소프트웨어 취약점을 악용하여 비밀번호 관리자에서 비밀번호를 추출하려고 시도하는 중.";
+"loading_code_decryption_10" = "몇 년 전에 적어둔 비밀번호를 찾기 위해 오래된 노트북을 뒤지는 중.";
+"loading_code_decryption_11" = "코드에게 커피 한 잔을 제공함으로써 비밀을 밝히도록 설득하는 중.";
+"loading_code_decryption_12" = "지렛대와 WD-40 캔으로 코드에서 비밀을 캐내는 중.";
+"loading_code_decryption_13" = "코드가 스스로 암호 해독에 동의할 때까지 코드에게 달콤한 말을 속삭이는 중.";
+"loading_code_decryption_14" = "코드가 콩을 흘릴 때까지 닭 삑삑이로 위협하는 중.";
+"loading_code_decryption_15" = "코드가 스스로 암호를 해독하도록 친절하게 요청한 다음 몇 시간 동안 생각할 때까지 인내심을 가지고 기다리는 중.";
+"loading_code_decryption_16" = "고도로 훈련된 다람쥐 팀을 고용하여 키보드의 키를 무작위로 눌러 코드를 해독하는 중.";
+"loading_code_decryption_17" = "레인보우 테이블을 활용하여 주어진 해시와 일치하는 일반 텍스트를 찾는 중.";
+"loading_code_decryption_18" = "대체 암호를 해독하기 위해 주파수 분석을 활용하는 중.";
+"loading_code_decryption_19" = "키의 길이를 결정하고 알려진 일반 텍스트 공격을 적용하여 비제네르 암호를 해독하는 중.";
+"loading_code_decryption_20" = "난독화된 바이너리를 리버스 엔지니어링하여 원본 소스 코드를 추출하는 중.";
+"loading_code_decryption_21" = "공개 키 암호화 체계에서 개인 키를 복구하려고 시도하는 중.";
+"loading_code_decryption_22" = "이미지 또는 오디오 파일에 숨겨진 스테가노그래피 메시지를 해독하려고 시도하는 중.";
+"loading_code_decryption_23" = "소셜 엔지니어링 공격을 사용하여 사용자의 비밀번호 또는 보안 질문에 대한 답변을 얻으려는 중.";
+"loading_code_decryption_24" = "암호화된 데이터의 패턴을 식별하고 암호 해독 키를 예측하기 위해 머신 러닝 알고리즘을 적용하는 중.";
+"loading_code_decryption_25" = "암호화 알고리즘 또는 구현의 취약점을 악용하여 일반 텍스트를 얻는 중.";
+"loading_code_decryption_26" = "실행 중인 프로그램의 메모리에서 암호화 키를 추출하려고 시도하는 중.";
+
+
+// MARK: - Error
+"error_limit_api_call_title" = "요청 제한";
+"error_limit_api_call_description" = "요청 시도가 제한되었습니다.\n고객센터로 문의부탁드립니다.";
+"error_code_service_key_not_enough_title" = "코드 키 부족";
+"error_code_service_key_not_enough_description" = "코드 입력을 위한 키가 부족합니다.\n잠시후 다시 시도해주세요.";
+"error_code_service_key_not_found_title" = "일치하는 키 없음";
+"error_code_service_key_not_found_description" = "일치하는 키를 찾을 수 없습니다.";
+"error_code_service_code_blocked_title" = "차단된 코드";
+"error_code_service_code_blocked_description" = "차단된 코드입니다.\n[설정 > 차단된 코드] 에서 해제후 시도해주세요.";
+
+// MARK: - Launch
+"launch_unsupported_version_alert_title" = "버전 미지원 안내";
+"launch_unsupported_version_alert_description" = "현재 앱의 버전이 지원 버전보다 낮습니다.\n업데이트하여 최신버전으로 이용해주세요.";
+"launch_unsupported_version_alert_action_update_title" = "업데이트";
+
+// MARK: - Enter Code
+"enter_code_total_codes_count_title" = "등록된 총 코드 수: %@";
+"enter_code_code_input_title" = "코드를 입력하세요.";
+"enter_code_code_input_placeholder" = "도움말을 보려면 '도움말'을 입력.";
+"enter_code_enter_button_title" = "입력";
+
+// MARK: - Create Code
+"create_code_code_input_title" = "생성할 코드를 입력하세요.";
+"create_code_code_input_placeholder" = "코드";
+"create_code_generate_code_button_title" = "임의 코드 생성";
+"create_code_description_input_title" = "설명을 입력하세요.";
+"create_code_description_input_placeholder" = "설명";
+"create_code_create_button_title" = "생성";
+"create_code_created_alert_title" = "코드 생성";
+"create_code_created_alert_description" = "코드가 생성되었습니다.\n모두가 코드를 추측할 수 있도록 공유해보세요.";
+"create_code_create_term_title" = "콘텐츠에 민감하거나 기밀 정보가 포함되어 있거나 사용자에게 부적절하거나 불쾌감을 주는 경우 경고 없이 삭제될 수 있습니다.";
+
+// MARK: - Room
+"room_code_copy_toast_title" = "코드 복사";
+"room_code_delete_button_title" = "코드 삭제";
+"room_code_deleted_alert_title" = "코드 삭제";
+"room_code_deleted_alert_description" = "코드가 정상적으로 삭제되었습니다.";
+"room_code_block_button_title" = "차단";
+"room_code_block_confirm_alert_title" = "코드 차단";
+"room_code_block_confirm_alert_description" = "정말 해당 코드를 차단하시겠습니까?\n설정에서 차단을 해제할 수 있습니다.";
+"room_code_block_confirm_alert_action_block_title" = "차단";
+"room_code_blocked_alert_title" = "코드 차단";
+"room_code_blocked_alert_description" = "코드가 정상적으로 차단되었습니다.";
+"room_report_subject" = "[신고] 부적절한 콘텐츠";
+"room_report_message" = "코드: %@\n사유: ";
+
+// MARK: - Setting
+"setting_title" = "설정";
+"setting_section_helps_title" = "도움말";
+"setting_menu_notice_title" = "공지사항";
+"setting_menu_version_title" = "버전";
+"setting_menu_developer_title" = "개발팀";
+"setting_menu_open_source_license_title" = "오픈소스 라이센스";
+
+"setting_section_menus_title" = "메뉴";
+"setting_menu_my_codes_title" = "내 코드";
+"setting_menu_blocked_codes_title" = "차단된 코드";
+"setting_menu_get_key_title" = "광고 보고 키 얻기";
+
+"setting_toast_copied_developer" = "개발자 이메일 복사";
+
+// MARK: - Notice
+"notice_title" = "공지사항";
+
+// MARK: - My Codes
+"my_codes_title" = "내 코드";
+
+// MARK: - Blocked Codes
+"blocked_codes_title" = "차단된 코드";
+"blocked_codes_unblock_confirm_alert_title" = "코드 차단 해제";
+"blocked_codes_unblock_confirm_alert_description" = "코드 차단을 해제하시겠습니까?";
+"blocked_codes_unblock_confirm_alert_action_unblock_title" = "차단 해제";
+
+// MARK: - Open Source License
+"open_source_license_title" = "오픈소스 라이센스";
+
+// MARK: - Web
+"web_loading_title" = "불러오는 중...";

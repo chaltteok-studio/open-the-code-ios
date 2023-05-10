@@ -1,0 +1,49 @@
+//
+//  Shared.xcconfig
+//  
+//
+//  Created by JSilver on 2023/01/28.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// MARK: - Projdct Setting
+// Product name
+PRODUCT_NAME = open-the-code
+// Info plist file path
+INFOPLIST_FILE = $(PROJECT_NAME)/Support/Info.plist
+// Development asset path
+DEVELOPMENT_ASSET_PATHS = ${PROJECT_NAME}/Resource/Preview\ Content.xcassets
+// Accent color
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = accent_color
+// Bundle identifier
+PRODUCT_BUNDLE_IDENTIFIER = sample.chaltteok-studio.open-the-code
+// Version
+MARKETING_VERSION = 1.0.0
+//Build number
+CURRENT_PROJECT_VERSION = 8
+// Deployment target(iOS)
+IPHONEOS_DEPLOYMENT_TARGET = 15.7
+// Base SDK
+SDKROOT = iphoneos
+// Targeted device family
+TARGETED_DEVICE_FAMILY = 1,2
+// Runpath search paths
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+
+// MARK: - Build Setting
+// Swift version
+SWIFT_VERSION = 5
+// Other linker flags
+OTHER_LDFLAGS = -ObjC
+
+// MARK: - Code Sign
+// Code sign style
+CODE_SIGN_STYLE = Manual
+// Development Team
+DEVELOPMENT_TEAM = ********
+
+// MARK: - User Define
+// URL scheme
+URL_SCHEME = ********

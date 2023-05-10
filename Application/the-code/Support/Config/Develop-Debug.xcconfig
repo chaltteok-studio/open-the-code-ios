@@ -1,0 +1,25 @@
+//
+//  develop.xcconfig
+//  
+//
+//  Created by JSilver on 2023/01/28.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Shared/Shared-Debug.xcconfig"
+
+// MARK: - Project Setting
+// App icon name
+ASSETCATALOG_COMPILER_APPICON_NAME = app_icon_develop
+
+// MARK: - Build Setting
+// swift complication conditions
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = ${SWIFT_ACTIVE_COMPILATION_CONDITIONS} DEVELOP
+
+// MARK: - Code Sign
+
+// MARK: - User Define
+// Display name
+BUNDLE_DISPLAY_NAME = The Code(Dev)

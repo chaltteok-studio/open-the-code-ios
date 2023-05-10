@@ -1,0 +1,35 @@
+//
+//  Shared-Release.xcconfig
+//  
+//
+//  Created by JSilver on 2023/03/06.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Shared.xcconfig"
+
+// MARK: - Project Setting
+
+// MARK: - Build Setting
+// Validate built product
+VALIDATE_PRODUCT = YES
+// Build only activate architecture
+ONLY_ACTIVE_ARCH = NO
+// Debug symbol
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+// Testability
+ENABLE_TESTABILITY = NO
+// GCC optimization level
+GCC_OPTIMIZATION_LEVEL = s
+// Swift complication mode
+SWIFT_COMPILATION_MODE = wholemodule
+// Swift optimization level
+SWIFT_OPTIMIZATION_LEVEL = -O
+
+// MARK: - Code Sign
+// Code sign identifier
+CODE_SIGN_IDENTITY = Apple Distribution
+// Probisioning profile specifier
+PROVISIONING_PROFILE_SPECIFIER = ********

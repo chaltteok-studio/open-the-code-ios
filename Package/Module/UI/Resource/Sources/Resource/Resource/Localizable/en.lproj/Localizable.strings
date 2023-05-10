@@ -1,0 +1,126 @@
+/* 
+  Localizable.strings
+  
+
+  Created by JSilver on 2023/01/28.
+  
+*/
+
+// MARK: - Common
+"app_name" = "The Code";
+"team_name" = "Chaltteok Studio";
+"copyright" = "© Chaltteok Studio";
+
+"empty_title" = "No Results Found";
+"empty_description" = "Please check your internet\nconnection and try again";
+
+"error_alert_title" = "Oops";
+"error_alert_description" = "Something went wrong.\nPlease try later.";
+"error_alert_action_cancel_title" = "Cancel";
+"error_alert_action_confirm_title" = "Confirm";
+
+"loading_code_decryption_1" = "Using a rainbow table to speed up password cracking.";
+"loading_code_decryption_2" = "Trying to crack an encryption key by guessing the user's pet's name.";
+"loading_code_decryption_3" = "nalyzing the frequency distribution of characters to crack a monoalphabetic substitution cipher.";
+"loading_code_decryption_4" = "Trying to recover a deleted key file to decrypt an important message.";
+"loading_code_decryption_5" = "Unscrambling a jumbled-up message by comparing it against known plaintext.";
+"loading_code_decryption_6" = "Attempting to find a weakness in an encryption algorithm to exploit.";
+"loading_code_decryption_7" = "Using a quantum computer to perform Shor's algorithm for breaking RSA encryption.";
+"loading_code_decryption_8" = "Trying to decrypt a message that was encrypted with a one-time pad, but realizing that it's impossible without the key.";
+"loading_code_decryption_9" = "Trying to extract a password from a password manager by exploiting a software vulnerability.";
+"loading_code_decryption_10" = "Going through an old notebook to find a password that was written down years ago.";
+"loading_code_decryption_11" = "Convincing the code to reveal its secrets by offering it a cup of coffee.";
+"loading_code_decryption_12" = "Prying the secrets out of the code with a crowbar and a can of WD-40.";
+"loading_code_decryption_13" = "Whispering sweet nothings to the code until it agrees to decrypt itself.";
+"loading_code_decryption_14" = "Threatening the code with a rubber chicken until it spills the beans.";
+"loading_code_decryption_15" = "Asking the code nicely to decrypt itself, and then waiting patiently while it thinks about it for a few hours.";
+"loading_code_decryption_16" = "Hiring a team of highly trained squirrels to crack the code by randomly pressing keys on a keyboard.";
+"loading_code_decryption_17" = "Utilizing rainbow tables to find a plaintext match for a given hash.";
+"loading_code_decryption_18" = "mploying a frequency analysis to crack a substitution cipher.";
+"loading_code_decryption_19" = "Breaking a Vigenere cipher by determining the length of the key and applying a known plaintext attack.";
+"loading_code_decryption_20" = "Reverse-engineering an obfuscated binary to extract its original source code.";
+"loading_code_decryption_21" = "Trying to recover the private key from a public key encryption scheme.";
+"loading_code_decryption_22" = "Attempting to decode steganographic messages hidden within images or audio files.";
+"loading_code_decryption_23" = "Using a social engineering attack to obtain a user's password or security question answers.";
+"loading_code_decryption_24" = "Applying machine learning algorithms to identify patterns in encrypted data and predict the decryption key.";
+"loading_code_decryption_25" = "Exploiting vulnerabilities in the encryption algorithm or implementation to obtain plaintext.";
+"loading_code_decryption_26" = "Trying to extract the encryption key from the memory of a running program.";
+
+// MARK: - Error
+"error_limit_api_call_title" = "Request Limited";
+"error_limit_api_call_description" = "Your request attempts have been limited\nPlease contact our help center.";
+"error_code_service_key_not_enough_title" = "Not Enough Keys";
+"error_code_service_key_not_enough_description" = "There aren't enough code keys\nfor the code you're trying to enter.";
+"error_code_service_key_not_found_title" = "Key Not Found";
+"error_code_service_key_not_found_description" = "No matching keys found.";
+"error_code_service_code_blocked_title" = "Code Blocked";
+"error_code_service_code_blocked_description" = "Trying to enter blocked code.\nYou can unblock it in [Setting > Blocked Code].";
+
+// MARK: - Launch
+"launch_unsupported_version_alert_title" = "Unsupported Version";
+"launch_unsupported_version_alert_description" = "Your version of the app is lower than the supported version\nPlease update to the latest version.";
+"launch_unsupported_version_alert_action_update_title" = "Update";
+
+// MARK: - Enter Code
+"enter_code_total_codes_count_title" = "Total Registered Codes: %@";
+"enter_code_code_input_title" = "ENTER THE CODE.";
+"enter_code_code_input_placeholder" = "Type 'help' for help.";
+"enter_code_enter_button_title" = "ENTER";
+
+// MARK: - Create Code
+"create_code_code_input_title" = "CREATE THE CODE.";
+"create_code_code_input_placeholder" = "Code";
+"create_code_generate_code_button_title" = "GENERATE CODE";
+"create_code_description_input_title" = "WRITE THE CODE DESCRIPTION.";
+"create_code_description_input_placeholder" = "Description";
+"create_code_create_button_title" = "CREATE";
+"create_code_created_alert_title" = "Code Created";
+"create_code_created_alert_description" = "Your code created!\nShare it so everyone can guess the code.";
+"create_code_create_term_title" = "Content may be removed without warning if it contains sensitive or confidential information, or if it is inappropriate or offensive to users.";
+
+// MARK: - Room
+"room_code_copy_toast_title" = "Code Copied";
+"room_code_delete_button_title" = "DELETE";
+"room_code_deleted_alert_title" = "Code Deleted";
+"room_code_deleted_alert_description" = "The code was successfully deleted.";
+"room_code_block_button_title" = "BLOCK";
+"room_code_block_confirm_alert_title" = "Code Block";
+"room_code_block_confirm_alert_description" = "Are you sure you want to block this code?\nYou can unblock it in your settings.";
+"room_code_block_confirm_alert_action_block_title" = "Block";
+"room_code_blocked_alert_title" = "Code Blocked";
+"room_code_blocked_alert_description" = "The code was successfully blocked.";
+"room_report_subject" = "[REPORT] Inappropriate content";
+"room_report_message" = "Code: %@\nReason: ";
+
+// MARK: - Setting
+"setting_title" = "Setting";
+"setting_section_helps_title" = "Helps";
+"setting_menu_notice_title" = "Notice";
+"setting_menu_version_title" = "Version";
+"setting_menu_developer_title" = "Developer";
+"setting_menu_open_source_license_title" = "Open Source License";
+
+"setting_section_menus_title" = "Menus";
+"setting_menu_my_codes_title" = "My Codes";
+"setting_menu_blocked_codes_title" = "Blocked Codes";
+"setting_menu_get_key_title" = "Get Key After Show AD";
+
+"setting_toast_copied_developer" = "Developer Email Copied";
+
+// MARK: - Notice
+"notice_title" = "Notice";
+
+// MARK: - My Codes
+"my_codes_title" = "My Codes";
+
+// MARK: - Blocked Codes
+"blocked_codes_title" = "Blocked Codes";
+"blocked_codes_unblock_confirm_alert_title" = "Code Unblock";
+"blocked_codes_unblock_confirm_alert_description" = "Are you sure you want to unblock this code?";
+"blocked_codes_unblock_confirm_alert_action_unblock_title" = "Unblock";
+
+// MARK: - Open Source License
+"open_source_license_title" = "Open Source License";
+
+// MARK: - Web
+"web_loading_title" = "Loading...";
