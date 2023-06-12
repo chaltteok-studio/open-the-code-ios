@@ -1,0 +1,33 @@
+//
+//  Application.swift
+//
+//
+//  Created by <%= data[:author] %> on 2023/05/30.
+//
+
+import SwiftUI
+import <%= File.basename(data[:options][:dependencyPath]) %>
+
+@main
+struct Application: App {
+    // MARK: - View
+    var body: some Scene {
+        WindowGroup {
+            
+        }
+    }
+
+    // MARK: - Property
+
+    // MARK: - Initializer
+    init() {
+        Application.setUpApplication()
+    }
+
+    // MARK: - Public
+    
+    // MARK: - Private
+    private static func setUpApplication() {
+        // Add set up codes of demo application.
+    }
+}

@@ -181,6 +181,8 @@ private func EmptyView() -> some View {
 }
 
 #if DEBUG
+import SwiftUI
+
 class MyCodesMockRouter: MyCodesRoutable {
     final private class Room: ComposableController, RoomControllable {
         weak var delegate: (RoomControllerDelegate)?

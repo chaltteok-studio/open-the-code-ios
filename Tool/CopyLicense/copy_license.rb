@@ -1,5 +1,5 @@
 #
-#  copy-license.rb
+#  copy_license.rb
 #
 #
 #  Created by JSilver on 2023/04/25.
@@ -40,7 +40,7 @@ def main(argv)
     puts outputPath
 
     if packagePath.nil? || outputPath.nil?
-        abort("Usage: ruby copy-license <package path> <output path>")
+        abort("Usage: ruby copy_license <package path> <output path>")
     end
 
     copyLicense(packagePath, outputPath)

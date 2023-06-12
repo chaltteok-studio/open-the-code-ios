@@ -59,6 +59,7 @@ final class SettingViewController: ComposableController, SettingControllable {
             )
             .toast(
                 .object(env, path: \.isCopiedDeveloperToastShow),
+                duration: 2,
                 layouts: [
                     .inside(.top, offset: 24),
                     .center(.x)
@@ -267,6 +268,8 @@ private func NavigationBar(
 }
 
 #if DEBUG
+import SwiftUI
+
 class SettingMockRouter: SettingRoutable {
     class NoticeList: ComposableController, NoticeListControllable {
         weak var delegate: (any NoticeListControllerDelegate)?

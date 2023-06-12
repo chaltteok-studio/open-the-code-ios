@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "chapssalkit-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/chaltteok-studio/ChapssalKit-iOS.git",
-      "state" : {
-        "revision" : "92362053a9f693ab46fe20f6814134dd7e18d9e0",
-        "version" : "1.0.7"
-      }
-    },
-    {
       "identity" : "compose",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/wlsdms0122/Compose.git",
@@ -59,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleDataTransport.git",
       "state" : {
-        "revision" : "7874c1b48cbffd086ce8a052c4be873a78613775",
-        "version" : "9.2.3"
+        "revision" : "cc7265b8e3906304e6e81f32c1662a94bbae2357",
+        "version" : "9.2.2"
       }
     },
     {
@@ -183,7 +174,7 @@
     {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
         "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
         "version" : "6.5.0"
@@ -221,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "0af9125c4eae12a4973fb66574c53a54962a9e1e",
-        "version" : "1.21.0"
+        "revision" : "f25867a208f459d3c5a06935dceb9083b11cd539",
+        "version" : "1.22.0"
       }
     },
     {

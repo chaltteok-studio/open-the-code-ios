@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#
+#  run-tool
+#  
+#
+#  Created by JSilver on 2023/06/01.
+#
+
+case $1 in
+    "generate_content")
+        ruby "Tool/GenerateContents/generate_contents.rb"
+        ;;
+
+    "generate_package")
+        TYPE=$2
+        
+        if [ -z "$TYPE" ]
+        then
+            echo "Usage: ./run-tool generate_package <type>"
+            exit 1
+        fi
+        
+        ruby "Tool/GeneratePackage/generate_package.rb" $TYPE
+        ;;
+
+    *)
+        echo "Usage: ./run-tool <command> <arguments...>"
+        exit 1
+        ;;
+esac

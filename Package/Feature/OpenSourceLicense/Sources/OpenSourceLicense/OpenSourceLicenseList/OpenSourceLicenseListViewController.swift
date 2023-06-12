@@ -139,6 +139,8 @@ private func NavigationBar(
 }
 
 #if DEBUG
+import SwiftUI
+
 class OpenSourceLicenseListMockRouter: OpenSourceLicenseListRoutable {
     class OpenSourceLicenseDetail: ComposableController, OpenSourceLicenseDetailControllable {
         weak var delegate: (any OpenSourceLicenseDetailControllerDelegate)?

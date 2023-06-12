@@ -63,7 +63,7 @@ git clone https://github.com/username/open-the-code.git
 2. Move to the project folder.
 3. Run the Makefile to create the .xcworkspacedata.
 ```
-make
+./run-tool generate_content
 ```
 4. Open the `.xcworkspace` file in Xcode.
 

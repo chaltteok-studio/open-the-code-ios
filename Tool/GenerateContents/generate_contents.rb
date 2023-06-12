@@ -1,5 +1,5 @@
 #
-#  generate-contents.rb
+#  generate_contents.rb
 #  
 #
 #  Created by JSilver on 2023/04/25.
@@ -9,7 +9,11 @@ require 'pathname'
 require 'yaml'
 require 'erb'
 
+require_relative 'config.rb'
+
 # Constants
+CONFIG_PATH = "gcconfig.yml"
+
 WORKSPACE_DATA_TEMPLATE = File.expand_path("Template/contents.xcworkspacedata.erb", __dir__)
 FILE_TEMPLATE = File.expand_path("Template/file.erb", __dir__)
 GROUP_TEMPLATE = File.expand_path("Template/group.erb", __dir__)
@@ -18,40 +22,9 @@ OUTPUT_FILE = "contents.xcworkspacedata"
 
 INDENT_SPACE = 3
 
-# Config
-class Config
-    # Constant
-    @@CONFIG_FILENAME = "gcconfig.yaml"
-
-    @@WORKSPACE_KEY = "xcworkspace"
-
-    # Property
-    attr_accessor :xcworkspace
-
-    # Initializer
-    def initialize(path)
-        path ||= @@CONFIG_FILENAME
-        yaml = File.exist?(path) ? YAML.load_file(path) : nil
-
-        @xcworkspace = yaml&[@@WORKSPACE_KEY] || Dir["*.xcworkspace"].first
-
-        validate()
-    end
-
-    # Public
-
-    # Private
-    private
-    def validate
-        if @xcworkspace.nil?
-            abort("error: .xcworkspace file not found.")
-        end
-    end
-end
-
 # Functions
 def generate(config)
-    workspacePath = Pathname.new(config.xcworkspace)
+    workspacePath = Pathname.new(config[:xcworkspace])
 
     # Generate content.xcworkspacedata file.
     workspace = ERB.new(File.read(WORKSPACE_DATA_TEMPLATE))
@@ -159,7 +132,11 @@ def main(argv)
     # Get arguments
     configPath = argv[0]
 
-    generate(Config.new(configPath))
+    config = Config.new(configPath || CONFIG_PATH, scheme: {
+        :xcworkspace => Dir["*.xcworkspace"].first
+    })
+
+    generate(config)
     puts "✅ Workspace data generation complete."
 end
 

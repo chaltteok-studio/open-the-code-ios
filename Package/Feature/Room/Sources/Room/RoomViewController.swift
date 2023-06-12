@@ -363,9 +363,9 @@ private func CodeContent(
 }
 
 #if DEBUG
-class RoomMockRouter: RoomRoutable {
-    
-}
+import SwiftUI
+
+class RoomMockRouter: RoomRoutable { }
 
 struct Room_Preview: View {
     var body: some View {

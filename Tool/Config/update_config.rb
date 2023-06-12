@@ -1,5 +1,5 @@
 #
-#  update-config.rb
+#  update_config.rb
 #  
 #
 #  Created by JSilver on 2023/04/25.
@@ -49,7 +49,7 @@ def main(argv)
     build = ARGV[2]
 
     if version.nil? || build.nil?
-        abort("Usage: update-config <xcconfig path> <version> <build>")
+        abort("Usage: update_config <xcconfig path> <version> <build>")
     end
 
     updateConfig(configPath, version, build)

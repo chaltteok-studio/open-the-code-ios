@@ -25,7 +25,7 @@ let package = Package(
         .package(url: "https://github.com/wlsdms0122/Route.git", exact: "1.3.0"),
         .package(url: "https://github.com/wlsdms0122/Deeplinker.git", exact: "1.1.1"),
         .package(url: "https://github.com/wlsdms0122/JSToast.git", exact: "2.6.5"),
-        .package(url: "https://github.com/chaltteok-studio/ChapssalKit-iOS.git", exact: "1.0.7"),
+        .package(url: "https://github.com/chaltteok-studio/ChapssalKit-iOS.git", exact: "1.0.8"),
         .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.1.2"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "10.3.0"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "10.8.0")

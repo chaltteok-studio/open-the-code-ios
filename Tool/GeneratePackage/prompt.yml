@@ -1,0 +1,38 @@
+packageName:
+  message: "⚙️ Package Name: "
+  required: true
+packagePath:
+  message: "⚙️ Package Path: "
+  required: true
+author:
+  message: "⚙️ Who Is Package Author: "
+  required: true
+displayName:
+  message: "⚙️ Display Name (default: nil, if nil, equal to package name): "
+dependencyPath:
+  message: "⚙️ Dependency Path (default: nil): "
+swiftToolVersion:
+  message: "⚙️ Swift Tool Version (default: 5.8): "
+  default: "5.8"
+iosVersion:
+  message: "⚙️ Minimum iOS Version (default: 15.0): "
+  default: "15.0"
+bundleIdentifier:
+  message: "⚙️ Bundle Identifier (default: com.company.project): "
+  default: "com.company.project"
+teamIdentifier:
+  message: "⚙️ Signing Team Identifier (default: nil): "
+displayVersion:
+  message: "⚙️ App Version (default: 1.0.0): "
+  default: "1.0.0"
+buildNumber:
+  message: "⚙️ Build Number (default: 1): "
+  default: "1"
+appIcon:
+  message: "⚙️ App Icon Asset Name (default: app_icon): "
+  default: "app_icon"
+accentColor:
+  message: "⚙️ Accent Color Asset Name (default: accent_color): "
+  default: "accent_color"
+additionalInfoPlistContentFilePath:
+  message: "⚙️ Info.plist Path: (default: nil)"

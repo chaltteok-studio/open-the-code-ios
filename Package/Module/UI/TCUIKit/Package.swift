@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", .upToNextMajor(from: "10.3.0")),
-        .package(url: "https://github.com/chaltteok-studio/ChapssalKit-iOS.git", .upToNextMajor(from: "1.0.7")),
+        .package(url: "https://github.com/chaltteok-studio/ChapssalKit-iOS.git", .upToNextMajor(from: "1.0.8")),
         .package(path: "../../../Core/Util"),
         .package(path: "../Resource"),
         .package(path: "../../Environment"),

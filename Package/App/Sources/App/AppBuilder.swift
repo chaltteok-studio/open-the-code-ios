@@ -42,14 +42,8 @@ public struct AppDependency: Dependency, RootDependency {
             ]
         )
         
-        let staticResponser = networkProvider
-            .responser(TCStaticNetworkResponser.self)
-        
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        
         let appService = AppService(
-            staticResponser: staticResponser,
+            provider: networkProvider,
             storage: userDefaultStorage
         )
         
@@ -59,7 +53,7 @@ public struct AppDependency: Dependency, RootDependency {
         
         let codeService = CodeService(
             storage: userDefaultStorage,
-            responser: responser,
+            provider: networkProvider,
             userService: userService
         )
         

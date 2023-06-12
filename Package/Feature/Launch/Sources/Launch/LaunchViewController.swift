@@ -129,9 +129,9 @@ private func Root() -> some View {
 }
 
 #if DEBUG
-private class LaunchMockRouter: LaunchRoutable {
-    
-}
+import SwiftUI
+
+private class LaunchMockRouter: LaunchRoutable { }
 
 private struct Launch_Preview: View {
     var body: some View {

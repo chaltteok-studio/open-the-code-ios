@@ -141,6 +141,7 @@ private func TabView(
 }
 
 #if DEBUG
+import SwiftUI
 import EnterCode
 import CreateCode
 import Setting

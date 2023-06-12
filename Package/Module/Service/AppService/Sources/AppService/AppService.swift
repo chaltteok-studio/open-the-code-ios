@@ -16,17 +16,17 @@ public protocol AppServiceable {
 
 public final class AppService: AppServiceable {
     // MARK: - Property
-    private let staticResponser: any NetworkResponser
+    private let provider: any NetworkProvider
     
     @Store
     private var limitAPICall: Bool
     
     // MARK: - Initializer
     public init(
-        staticResponser: any NetworkResponser,
+        provider: any NetworkProvider,
         storage: any Storage
     ) {
-        self.staticResponser = staticResponser
+        self.provider = provider
         
         // Set stored date.
         self._limitAPICall = Store(storage, for: .limitAPICall, default: true)
@@ -34,7 +34,8 @@ public final class AppService: AppServiceable {
     
     // MARK: - Public
     public func config() async throws -> Config {
-        let result = try await staticResponser.request(GetConfigTarget(.init()))
+        let result = try await provider.responser(TCStaticNetworkResponser.self)
+            .request(GetConfigTarget(.init()))
         
         limitAPICall = result.limitAPICall
         
@@ -44,7 +45,8 @@ public final class AppService: AppServiceable {
     }
     
     public func notices() async throws -> [Notice] {
-        let result = try await staticResponser.request(NoticesTarget(.init()))
+        let result = try await provider.responser(TCStaticNetworkResponser.self)
+            .request(NoticesTarget(.init()))
         return result.notices.map { Notice($0) }
     }
     

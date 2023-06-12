@@ -230,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=${PROJECT_DIR%/Application}/Tool/CopyLicense/copy-license.rb\n\nPACKAGE_PATH=${BUILD_DIR%/Build/*}/SourcePackages/checkouts\nOUTPUT_PATH=${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\n\nruby ${SCRIPT_PATH} ${PACKAGE_PATH} ${OUTPUT_PATH}\n";
+			shellScript = "SCRIPT_PATH=${PROJECT_DIR%/Application}/Tool/CopyLicense/copy_license.rb\n\nPACKAGE_PATH=${BUILD_DIR%/Build/*}/SourcePackages/checkouts\nOUTPUT_PATH=${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\n\nruby ${SCRIPT_PATH} ${PACKAGE_PATH} ${OUTPUT_PATH}\n";
 		};
 		F3549DA529F0ECFD00CB0CC0 /* [Lint] Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -405,7 +405,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Develop-Debug";
 		};
@@ -416,7 +415,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Develop-Release";
 		};
@@ -480,7 +478,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Live-Debug";
 		};
@@ -541,7 +538,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Live-Release";
 		};
@@ -602,7 +598,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Deploy;
 		};

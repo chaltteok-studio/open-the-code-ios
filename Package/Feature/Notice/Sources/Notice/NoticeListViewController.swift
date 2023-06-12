@@ -182,6 +182,8 @@ private func EmptyView() -> some View {
 }
 
 #if DEBUG
+import SwiftUI
+
 class NoticeListMockRouter: NoticeListRoutable {
     final private class Web: ComposableController, WebControllable {
         weak var delegate: (WebControllerDelegate)?

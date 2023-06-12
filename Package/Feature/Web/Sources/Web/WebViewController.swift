@@ -289,6 +289,8 @@ private func printPretty(_ dictionary: [AnyHashable: Any], start: Int, indent: I
 }
 
 #if DEBUG
+import SwiftUI
+
 private class WebMockRouter: WebRoutable {
     final private class Web: ComposableController, WebControllable {
         weak var delegate: (WebControllerDelegate)?
