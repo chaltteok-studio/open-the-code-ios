@@ -1,21 +1,21 @@
 //
-//  CreateCodeTarget.swift
+//  GetConfigSpec.swift
 //
 //
-//  Created by JSilver on 2023/03/21.
+//  Created by JSilver on 2023/03/30.
 //
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct CreateCodeTarget: CSTarget {
+public struct GetConfigSpec: TCStaticSpec {
     // MARK: - Property
-    public var path: String { "/the-code/codes" }
+    public var path: String { "/the-code/common/config/v1" }
     
-    public var method: HTTPMethod { .post }
+    public var method: HTTPMethod { .get }
     public var transaction: Transaction { .data }
-    public var request: Request { .body(parameter, encoder: .codable) }
+    public var request: Request { .none }
     public let parameter: Parameter
     
     public var result: Mapper<Result> { .codable }
@@ -27,23 +27,12 @@ public struct CreateCodeTarget: CSTarget {
     }
 }
 
-public extension CreateCodeTarget {
-    struct Parameter: Encodable {
+public extension GetConfigSpec {
+    struct Parameter {
         // MARK: - Property
-        public let code: String
-        public let author: String
-        public let content: String
         
         // MARK: - Initializer
-        public init(
-            code: String,
-            author: String,
-            content: String
-        ) {
-            self.code = code
-            self.author = author
-            self.content = content
-        }
+        public init() { }
         
         // MARK: - Lifecycle
         
@@ -53,7 +42,14 @@ public extension CreateCodeTarget {
     }
     
     struct Result: Decodable {
+        enum CodingKeys: String, CodingKey {
+            case limitAPICall = "limit_api_call"
+            case minimumVersion = "minimum_version"
+        }
+        
         // MARK: - Property
+        public let limitAPICall: Bool
+        public let minimumVersion: String
         
         // MARK: - Initializer
         

@@ -1,5 +1,5 @@
 //
-//  DeleteCodeTarget.swift
+//  CreateCodeSpec.swift
 //
 //
 //  Created by JSilver on 2023/03/21.
@@ -7,15 +7,15 @@
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct DeleteCodeTarget: CSTarget {
+public struct CreateCodeSpec: CSSpec {
     // MARK: - Property
-    public var path: String { "/the-code/codes/\(parameter.code)" }
+    public var path: String { "/the-code/codes" }
     
-    public var method: HTTPMethod { .delete }
+    public var method: HTTPMethod { .post }
     public var transaction: Transaction { .data }
-    public var request: Request { .none }
+    public var request: Request { .body(parameter, encoder: .codable) }
     public let parameter: Parameter
     
     public var result: Mapper<Result> { .codable }
@@ -27,14 +27,22 @@ public struct DeleteCodeTarget: CSTarget {
     }
 }
 
-public extension DeleteCodeTarget {
+public extension CreateCodeSpec {
     struct Parameter: Encodable {
         // MARK: - Property
         public let code: String
+        public let author: String
+        public let content: String
         
         // MARK: - Initializer
-        public init(code: String) {
+        public init(
+            code: String,
+            author: String,
+            content: String
+        ) {
             self.code = code
+            self.author = author
+            self.content = content
         }
         
         // MARK: - Lifecycle

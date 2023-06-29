@@ -41,7 +41,7 @@ This project aims to provide you with ideas about the SwiftUI-based architecture
             <td> Customizable toast. </td>
         </tr>
         <tr>
-            <td> <a href="https://github.com/wlsdms0122/Network"> Network </a> </td>
+            <td> <a href="https://github.com/wlsdms0122/Dyson"> Dyson </a> </td>
             <td> Networking layer. </td>
         </tr>
         <tr>
@@ -61,11 +61,13 @@ However, if you still want to build and run this project, follow the below steps
 git clone https://github.com/username/open-the-code.git
 ```
 2. Move to the project folder.
-3. Run the Makefile to create the .xcworkspacedata.
 ```
-./run-tool generate_content
+cd open-the-code
 ```
-4. Open the `.xcworkspace` file in Xcode.
+3. Run the Makefile to create the .xcworkspacedata and open the project.
+```
+./run-tool generate_content && xed .
+```
 
 # Notice
 - This repository not fully reflects the origin repository.

@@ -7,13 +7,15 @@
 
 import XCTest
 import Logger
-import Network
+import Dyson
 @testable import API
 import Environment
 
 final class APITests: XCTestCase {
     // MARK: - Property
-    private let networkProvider = URLNetworkProvider(
+    private let dyson = Dyson(
+        provider: .url(),
+        responser: TCResponser(),
         interceptors: [
             LogInterceptor()
         ]
@@ -33,13 +35,11 @@ final class APITests: XCTestCase {
     // MARK: - Test
     func test_that_request_with_get_notices_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCStaticNetworkResponser.self)
-        let target = NoticesTarget(.init())
+        let target = NoticesSpec(.init())
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -49,12 +49,11 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_get_time_target() async throws {
         // Given
-        let provider = networkProvider
-        let target = GetTimeTarget(.init())
+        let target = GetTimeSpec(.init())
         
         do {
             // When
-            let (_, response) = try await provider.request(target)
+            let (_, response) = try await dyson.response(target)
             
             let dateString = (response as? HTTPURLResponse)?.value(forHTTPHeaderField: "Date") ?? ""
             
@@ -74,13 +73,11 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_get_config_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCStaticNetworkResponser.self)
-        let target = GetConfigTarget(.init())
+        let target = GetConfigSpec(.init())
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -90,13 +87,11 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_get_code_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        let target = GetCodeTarget(.init(code: "test"))
+        let target = GetCodeSpec(.init(code: "test"))
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -106,13 +101,11 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_get_codes_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        let target = GetCodesTarget(.init(author: "-1"))
+        let target = GetCodesSpec(.init(author: "-1"))
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -122,9 +115,7 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_create_code_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        let target = CreateCodeTarget(.init(
+        let target = CreateCodeSpec(.init(
             code: "test",
             author: "-1",
             content: "Testing..."
@@ -132,7 +123,7 @@ final class APITests: XCTestCase {
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -142,15 +133,13 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_delete_code_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        let target = DeleteCodeTarget(.init(
+        let target = DeleteCodeSpec(.init(
             code: "test"
         ))
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {
@@ -160,13 +149,11 @@ final class APITests: XCTestCase {
     
     func test_that_request_with_get_codes_config_info_target() async throws {
         // Given
-        let responser = networkProvider
-            .responser(TCNetworkResponser.self)
-        let target = GetCodesConfigInfoTarget(.init())
+        let target = GetCodesConfigInfoSpec(.init())
         
         do {
             // When
-            _ = try await responser.request(target)
+            _ = try await dyson.data(target)
             
             // Then
         } catch {

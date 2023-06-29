@@ -1,5 +1,5 @@
 //
-//  NoticesTarget.swift
+//  NoticesSpec.swift
 //  
 //
 //  Created by JSilver on 2023/03/21.
@@ -7,9 +7,9 @@
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct NoticesTarget: TCStaticTarget {
+public struct NoticesSpec: TCStaticSpec {
     // MARK: - Property
     public var path: String {
         "/the-code/notices/v1?locale=\(Env.locale.rawValue)"
@@ -29,7 +29,7 @@ public struct NoticesTarget: TCStaticTarget {
     }
 }
 
-public extension NoticesTarget {
+public extension NoticesSpec {
     struct Parameter {
         // MARK: - Property
         

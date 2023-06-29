@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/wlsdms0122/Logger.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/wlsdms0122/Network.git", .upToNextMajor(from: "1.1.1")),
+        .package(url: "https://github.com/wlsdms0122/Dyson.git", .upToNextMajor(from: "2.0.0")),
         .package(path: "../Environment")
     ],
     targets: [
@@ -24,7 +24,7 @@ let package = Package(
             name: "API",
             dependencies: [
                 "Logger",
-                "Network",
+                "Dyson",
                 "Environment"
             ]
         ),

@@ -33,7 +33,7 @@ public struct Code {
 }
 
 extension Code {
-    init(_ code: GetCodeTarget.Result) {
+    init(_ code: GetCodeSpec.Result) {
         self.init(
             code: code.code,
             author: code.author,
@@ -44,7 +44,7 @@ extension Code {
 }
 
 extension Code {
-    init(_ code: GetCodesTarget.Code) {
+    init(_ code: GetCodesSpec.Code) {
         self.init(
             code: code.code,
             author: code.author,

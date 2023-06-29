@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "chapssalkit-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/chaltteok-studio/ChapssalKit-iOS.git",
+      "state" : {
+        "revision" : "b44051180ce26d2cea76ce3c6ccf1cb4d920d2a4",
+        "version" : "1.0.8"
+      }
+    },
+    {
       "identity" : "compose",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/wlsdms0122/Compose.git",
@@ -25,6 +34,15 @@
       "state" : {
         "revision" : "adc4c5aee458b57fcb3098bc4bd1ff5f1be13aa5",
         "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "dyson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wlsdms0122/Dyson.git",
+      "state" : {
+        "revision" : "c6b482d4974c2ece9d6c0d577eb487b9ff98e014",
+        "version" : "2.0.0"
       }
     },
     {
@@ -127,15 +145,6 @@
       }
     },
     {
-      "identity" : "network",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wlsdms0122/Network.git",
-      "state" : {
-        "revision" : "d057ebd3e538c20d5caccec9eaec7eb2e39848d1",
-        "version" : "1.1.1"
-      }
-    },
-    {
       "identity" : "promises",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/promises.git",
@@ -169,15 +178,6 @@
       "state" : {
         "revision" : "b042a120eec876a7d770ef3c19a6d7e5431b9352",
         "version" : "1.1.0"
-      }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift.git",
-      "state" : {
-        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
-        "version" : "6.5.0"
       }
     },
     {

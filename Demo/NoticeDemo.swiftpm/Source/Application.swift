@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Logger
-import Network
+import Dyson
 import Environment
 import API
 import Storage
@@ -22,7 +22,9 @@ struct Dependency: NoticeListDependency {
     init() {
         let userDefaultStorage = UserDefaultStorage()
         
-        let networkProvider = URLNetworkProvider(
+        let dyson = Dyson(
+            provider: .url(),
+            responser: TCResponser(),
             interceptors: [
                 LogInterceptor(),
                 APILimitInterceptor {
@@ -37,8 +39,8 @@ struct Dependency: NoticeListDependency {
         )
         
         let appService = AppService(
-            provider: networkProvider,
-            storage: userDefaultStorage
+            storage: userDefaultStorage,
+            dyson: dyson
         )
         
         self.appService = appService

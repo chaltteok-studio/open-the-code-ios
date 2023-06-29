@@ -16,17 +16,17 @@ public protocol AppServiceable {
 
 public final class AppService: AppServiceable {
     // MARK: - Property
-    private let provider: any NetworkProvider
+    private let dyson: Dyson
     
     @Store
     private var limitAPICall: Bool
     
     // MARK: - Initializer
     public init(
-        provider: any NetworkProvider,
-        storage: any Storage
+        storage: any Storage,
+        dyson: Dyson
     ) {
-        self.provider = provider
+        self.dyson = dyson
         
         // Set stored date.
         self._limitAPICall = Store(storage, for: .limitAPICall, default: true)
@@ -34,8 +34,7 @@ public final class AppService: AppServiceable {
     
     // MARK: - Public
     public func config() async throws -> Config {
-        let result = try await provider.responser(TCStaticNetworkResponser.self)
-            .request(GetConfigTarget(.init()))
+        let result = try await dyson.data(GetConfigSpec(.init()))
         
         limitAPICall = result.limitAPICall
         
@@ -45,8 +44,7 @@ public final class AppService: AppServiceable {
     }
     
     public func notices() async throws -> [Notice] {
-        let result = try await provider.responser(TCStaticNetworkResponser.self)
-            .request(NoticesTarget(.init()))
+        let result = try await dyson.data(NoticesSpec(.init()))
         return result.notices.map { Notice($0) }
     }
     

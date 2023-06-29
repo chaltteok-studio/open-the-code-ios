@@ -1,17 +1,17 @@
 //
-//  TCStaticTarget.swift
+//  TCStaticSpec.swift
 //
 //
 //  Created by jsilver on 2022/02/02.
 //
 
 import Foundation
-import Network
+import Dyson
 import Environment
 
-public protocol TCStaticTarget: Target, Cacheable { }
+public protocol TCStaticSpec: Spec, Cacheable { }
 
-public extension TCStaticTarget {
+public extension TCStaticSpec {
     var baseURL: String { Env.URL.staticURL }
     var headers: HTTPHeaders {
         [

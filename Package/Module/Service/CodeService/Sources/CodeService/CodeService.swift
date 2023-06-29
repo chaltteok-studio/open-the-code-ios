@@ -49,7 +49,7 @@ public extension CodeServiceable {
 
 public class CodeService: CodeServiceable {
     // MARK: - Property
-    private let provider: any NetworkProvider
+    private let dyson: Dyson
     private let userService: any UserServiceable
     
     private var codeKeyManager: CodeKeyManager
@@ -74,10 +74,10 @@ public class CodeService: CodeServiceable {
     // MARK: - Initializer
     public init(
         storage: any Storage,
-        provider: any NetworkProvider,
+        dyson: Dyson,
         userService: any UserServiceable
     ) {
-        self.provider = provider
+        self.dyson = dyson
         self.userService = userService
         
         codeKeyManager = CodeKeyManager(storage: storage)
@@ -88,7 +88,7 @@ public class CodeService: CodeServiceable {
     
     // MARK: - Public
     public func createCode(_ code: String, content: String) async throws {
-        try await provider.request(CreateCodeTarget(.init(
+        try await dyson.data(CreateCodeSpec(.init(
             code: code,
             author: userService.userIdentifier,
             content: content
@@ -96,10 +96,9 @@ public class CodeService: CodeServiceable {
     }
     
     public func deleteCode(_ code: String) async throws {
-        try await provider.responser(TCNetworkResponser.self)
-            .request(DeleteCodeTarget(.init(
-                code: code
-            )))
+        try await dyson.data(DeleteCodeSpec(.init(
+            code: code
+        )))
     }
 
     public func enterCode(_ code: String) async throws -> Code {
@@ -112,10 +111,9 @@ public class CodeService: CodeServiceable {
         }
         
         do {
-            let result = try await provider.responser(TCNetworkResponser.self)
-                .request(GetCodeTarget(.init(
-                    code: code
-                )))
+            let result = try await dyson.data(GetCodeSpec(.init(
+                code: code
+            )))
             
             codeKeyManager.use(at: result.requestedAt)
             
@@ -142,17 +140,15 @@ public class CodeService: CodeServiceable {
             return totalRegisteredCodeCount
         }
         
-        let result = try await provider.responser(TCNetworkResponser.self)
-            .request(GetCodesConfigInfoTarget(.init()))
+        let result = try await dyson.data(GetCodesConfigInfoSpec(.init()))
         self.totalRegisteredCodeCount = result.count
         return result.count
     }
 
     public func myCodes() async throws -> [Code] {
-        let result = try await provider.responser(TCNetworkResponser.self)
-            .request(GetCodesTarget(.init(
-                author: userService.userIdentifier
-            )))
+        let result = try await dyson.data(GetCodesSpec(.init(
+            author: userService.userIdentifier
+        )))
         return result.codes.map { Code($0) }
     }
     
@@ -161,8 +157,8 @@ public class CodeService: CodeServiceable {
     }
     
     public func checkCodeKeysRecovery() async throws {
-        let target = GetTimeTarget(.init())
-        let (_, response) = try await provider.request(target)
+        let target = GetTimeSpec(.init())
+        let (_, response) = try await dyson.response(target)
         
         let dateString = (response as? HTTPURLResponse)?.value(forHTTPHeaderField: "Date") ?? ""
         

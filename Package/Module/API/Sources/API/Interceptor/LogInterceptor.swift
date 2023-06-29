@@ -7,7 +7,7 @@
 
 import Foundation
 import Logger
-import Network
+import Dyson
 
 public struct LogInterceptor: Interceptor {
     // MARK: - Property
@@ -18,16 +18,16 @@ public struct LogInterceptor: Interceptor {
     // MARK: - Lifeycle
     public func request(
         _ request: URLRequest,
-        provider: any NetworkProvider,
-        target: some Target,
-        sessionTask: any TargetSessionTask,
-        completion: @escaping (Result<URLRequest, any Error>) -> Void
+        dyson: Dyson,
+        spec: some Spec,
+        sessionTask: ContainerSessionTask,
+        continuation: Continuation<URLRequest>
     ) {
         Logger.info("""
             
             📮 Request
-               URL         : \(request.url?.absoluteString ?? "[\(target.url as Any)]")
-               METHOD      : \(request.httpMethod ?? "[\(target.method.rawValue)]")
+               URL         : \(request.url?.absoluteString ?? "[\(spec.url as Any)]")
+               METHOD      : \(request.httpMethod ?? "[\(spec.method.rawValue)]")
                HEADERS     : \(printPretty(request.allHTTPHeaderFields ?? [:], start: 3, indent: 2))
                BODY        :
                  \(String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "unknown")
@@ -38,15 +38,15 @@ public struct LogInterceptor: Interceptor {
             ]
         )
         
-        completion(.success(request))
+        continuation(request)
     }
     
     public func response(
-        _ response: Response,
-        provider: any NetworkProvider,
-        target: some Target,
-        sessionTask: any TargetSessionTask,
-        completion: @escaping (Result<Response, any Error>) -> Void
+        _ response: Result<(Data, URLResponse), any Error>,
+        dyson: Dyson,
+        spec: some Spec,
+        sessionTask: ContainerSessionTask,
+        continuation: Continuation<Result<(Data, URLResponse), any Error>>
     ) {
         switch response {
         case let .success((data, response)):
@@ -55,7 +55,7 @@ public struct LogInterceptor: Interceptor {
             Logger.info("""
                 
                 📭 Response
-                   URL         : \(response?.url?.absoluteString ?? "[\(target.url?.absoluteString as Any)]")
+                   URL         : \(response?.url?.absoluteString ?? "[\(spec.url?.absoluteString as Any)]")
                    STATUS CODE : \((response?.statusCode) ?? -1)
                    HEADERS     : \(printPretty(response?.allHeaderFields ?? [:], start: 3, indent: 2))
                    DATA        :
@@ -71,7 +71,7 @@ public struct LogInterceptor: Interceptor {
             Logger.info("""
                 
                 🚨 Response
-                   URL         : \(target.url?.absoluteString as Any)
+                   URL         : \(spec.url?.absoluteString as Any)
                    Error       : \(String(describing: error))
                 
                 """,
@@ -81,7 +81,7 @@ public struct LogInterceptor: Interceptor {
             )
         }
         
-        completion(.success(response))
+        continuation(response)
     }
     
     // MARK: - Public

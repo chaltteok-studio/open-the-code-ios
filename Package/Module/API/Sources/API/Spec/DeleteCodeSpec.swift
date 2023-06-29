@@ -1,19 +1,19 @@
 //
-//  GetCodesConfigInfoTarget.swift
-//  
+//  DeleteCodeSpec.swift
 //
-//  Created by JSilver on 2023/04/14.
+//
+//  Created by JSilver on 2023/03/21.
 //
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct GetCodesConfigInfoTarget: CSTarget {
+public struct DeleteCodeSpec: CSSpec {
     // MARK: - Property
-    public var path: String { "/the-code/codes/config/info" }
+    public var path: String { "/the-code/codes/\(parameter.code)" }
     
-    public var method: HTTPMethod { .get }
+    public var method: HTTPMethod { .delete }
     public var transaction: Transaction { .data }
     public var request: Request { .none }
     public let parameter: Parameter
@@ -27,12 +27,15 @@ public struct GetCodesConfigInfoTarget: CSTarget {
     }
 }
 
-public extension GetCodesConfigInfoTarget {
-    struct Parameter {
+public extension DeleteCodeSpec {
+    struct Parameter: Encodable {
         // MARK: - Property
+        public let code: String
         
         // MARK: - Initializer
-        public init() { }
+        public init(code: String) {
+            self.code = code
+        }
         
         // MARK: - Lifecycle
         
@@ -43,7 +46,6 @@ public extension GetCodesConfigInfoTarget {
     
     struct Result: Decodable {
         // MARK: - Property
-        public let count: Int
         
         // MARK: - Initializer
         

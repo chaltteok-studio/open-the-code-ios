@@ -8,7 +8,7 @@
 import Foundation
 import Logger
 import RVB
-import Network
+import Dyson
 import Environment
 import API
 import Storage
@@ -28,7 +28,9 @@ public struct AppDependency: Dependency, RootDependency {
     public init() {
         let userDefaultStorage = UserDefaultStorage()
         
-        let networkProvider = URLNetworkProvider(
+        let dyson = Dyson(
+            provider: .url(),
+            responser: TCResponser(),
             interceptors: [
                 LogInterceptor(),
                 APILimitInterceptor {
@@ -43,8 +45,8 @@ public struct AppDependency: Dependency, RootDependency {
         )
         
         let appService = AppService(
-            provider: networkProvider,
-            storage: userDefaultStorage
+            storage: userDefaultStorage,
+            dyson: dyson
         )
         
         let userService = UserService(
@@ -53,7 +55,7 @@ public struct AppDependency: Dependency, RootDependency {
         
         let codeService = CodeService(
             storage: userDefaultStorage,
-            provider: networkProvider,
+            dyson: dyson,
             userService: userService
         )
         

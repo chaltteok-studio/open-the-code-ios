@@ -8,7 +8,7 @@
 import SwiftUI
 import GoogleMobileAds
 import Logger
-import Network
+import Dyson
 import Environment
 import API
 import Storage
@@ -24,7 +24,9 @@ struct Dependency: RoomDependency {
     init() {
         let userDefaultStorage = UserDefaultStorage()
         
-        let networkProvider = URLNetworkProvider(
+        let dyson = Dyson(
+            provider: .url(),
+            responser: TCResponser(),
             interceptors: [
                 LogInterceptor(),
                 APILimitInterceptor {
@@ -41,7 +43,7 @@ struct Dependency: RoomDependency {
         let userService = UserService(storage: userDefaultStorage)
         let codeService = CodeService(
             storage: userDefaultStorage,
-            provider: networkProvider,
+            dyson: dyson,
             userService: userService
         )
         

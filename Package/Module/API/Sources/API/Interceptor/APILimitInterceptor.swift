@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import Dyson
 
 public struct APILimitInterceptor: Interceptor {
     // MARK: - Property
@@ -20,17 +20,17 @@ public struct APILimitInterceptor: Interceptor {
     // MARK: - Lifecycle
     public func request(
         _ request: URLRequest,
-        provider: any NetworkProvider,
-        target: some Target,
-        sessionTask: any TargetSessionTask,
-        completion: @escaping (Result<URLRequest, any Error>) -> Void
+        dyson: Dyson,
+        spec: some Spec,
+        sessionTask: ContainerSessionTask,
+        continuation: Continuation<URLRequest>
     ) {
-        guard (target as? Limitable) != nil && limitAPICall() else {
-            completion(.success(request))
+        guard (spec as? Limitable) != nil && limitAPICall() else {
+            continuation(request)
             return
         }
         
-        completion(.failure(CSError(code: .CS99999)))
+        continuation(throwing: CSError(code: .CS99999))
     }
     
     // MARK: - Public

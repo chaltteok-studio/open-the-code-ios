@@ -1,16 +1,16 @@
 //
-//  CSTarget.swift
+//  CSSpec.swift
 //  
 //
 //  Created by jsilver on 2022/02/02.
 //
 
-import Network
+import Dyson
 import Environment
 
-public protocol CSTarget: Target, Authorizable, Limitable { }
+public protocol CSSpec: Spec, Authorizable, Limitable { }
 
-public extension CSTarget {
+public extension CSSpec {
     var baseURL: String { Env.URL.baseURL }
     var headers: HTTPHeaders {
         [

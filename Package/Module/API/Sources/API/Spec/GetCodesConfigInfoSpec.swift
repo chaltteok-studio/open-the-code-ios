@@ -1,17 +1,17 @@
 //
-//  GetConfigTarget.swift
+//  GetCodesConfigInfoSpec.swift
+//  
 //
-//
-//  Created by JSilver on 2023/03/30.
+//  Created by JSilver on 2023/04/14.
 //
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct GetConfigTarget: TCStaticTarget {
+public struct GetCodesConfigInfoSpec: CSSpec {
     // MARK: - Property
-    public var path: String { "/the-code/common/config/v1" }
+    public var path: String { "/the-code/codes/config/info" }
     
     public var method: HTTPMethod { .get }
     public var transaction: Transaction { .data }
@@ -27,7 +27,7 @@ public struct GetConfigTarget: TCStaticTarget {
     }
 }
 
-public extension GetConfigTarget {
+public extension GetCodesConfigInfoSpec {
     struct Parameter {
         // MARK: - Property
         
@@ -42,14 +42,8 @@ public extension GetConfigTarget {
     }
     
     struct Result: Decodable {
-        enum CodingKeys: String, CodingKey {
-            case limitAPICall = "limit_api_call"
-            case minimumVersion = "minimum_version"
-        }
-        
         // MARK: - Property
-        public let limitAPICall: Bool
-        public let minimumVersion: String
+        public let count: Int
         
         // MARK: - Initializer
         

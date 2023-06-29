@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import Dyson
 
 public struct CachePolicyInterceptor: Interceptor {
     // MARK: - Property
@@ -17,20 +17,20 @@ public struct CachePolicyInterceptor: Interceptor {
     // MARK: - Lifecycle
     public func request(
         _ request: URLRequest,
-        provider: any NetworkProvider,
-        target: some Target,
-        sessionTask: any TargetSessionTask,
-        completion: @escaping (Result<URLRequest, any Error>) -> Void
+        dyson: Dyson,
+        spec: some Spec,
+        sessionTask: ContainerSessionTask,
+        continuation: Continuation<URLRequest>
     ) {
-        guard let cachePolicy = (target as? Cacheable)?.cachePolicy else {
-            completion(.success(request))
+        guard let cachePolicy = (spec as? Cacheable)?.cachePolicy else {
+            continuation(request)
             return
         }
         
         var request = request
         request.cachePolicy = cachePolicy
         
-        completion(.success(request))
+        continuation(request)
     }
     
     // MARK: - Public

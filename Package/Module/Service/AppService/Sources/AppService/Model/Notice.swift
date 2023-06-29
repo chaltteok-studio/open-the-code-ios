@@ -27,7 +27,7 @@ public struct Notice {
 }
 
 extension Notice {
-    init(_ notice: NoticesTarget.Notice) {
+    init(_ notice: NoticesSpec.Notice) {
         self.init(
             id: notice.id,
             url: notice.url,

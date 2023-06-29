@@ -20,7 +20,7 @@ let package = Package(
         .package(url: "https://github.com/wlsdms0122/Compose.git", exact: "1.2.1"),
         .package(url: "https://github.com/wlsdms0122/Logger.git", exact: "1.0.0"),
         .package(url: "https://github.com/wlsdms0122/Validator.git", exact: "1.0.3"),
-        .package(url: "https://github.com/wlsdms0122/Network.git", exact: "1.1.1"),
+        .package(url: "https://github.com/wlsdms0122/Dyson.git", exact: "2.0.0"),
         .package(url: "https://github.com/wlsdms0122/Storage.git", exact: "1.0.2"),
         .package(url: "https://github.com/wlsdms0122/Route.git", exact: "1.3.0"),
         .package(url: "https://github.com/wlsdms0122/Deeplinker.git", exact: "1.1.1"),

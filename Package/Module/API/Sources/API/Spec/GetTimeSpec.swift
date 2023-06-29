@@ -1,5 +1,5 @@
 //
-//  GetTimeTarget.swift
+//  GetTimeSpec.swift
 //  
 //
 //  Created by JSilver on 2023/03/30.
@@ -7,9 +7,9 @@
 
 import Foundation
 import Environment
-import Network
+import Dyson
 
-public struct GetTimeTarget: TCStaticTarget {
+public struct GetTimeSpec: TCStaticSpec {
     // MARK: - Property
     public var path: String { "/the-code/common/time/v1" }
     
@@ -27,7 +27,7 @@ public struct GetTimeTarget: TCStaticTarget {
     }
 }
 
-public extension GetTimeTarget {
+public extension GetTimeSpec {
     struct Parameter {
         // MARK: - Property
         
